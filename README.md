@@ -1,15 +1,16 @@
-# Getting Started with Create React App
+# Getting Started With Pema Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using React and Bootstrap.
+You'll be able to access to different portfolios(onepage, multipage, threejs, etc...) and edit them to use for free
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:9000](http://localhost:9000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -17,7 +18,7 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All the test are saved on the folder [/src/__tests__/] and you could add/modify to test your changes and own functions.
 
 ### `npm run build`
 
