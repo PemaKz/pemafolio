@@ -3,20 +3,40 @@
 }
 
 /*Top Menu*/
+.logo{
+    color:#d9233a;
+}
 .menunumber{
-    color: #51bfff;
+    transition: .3s all;
+    color: #f02342;
 }
 
 .menulink{
     transition: .3s all;
+    color:#fff;
+}
+
+.menulink-sm{
+    transition: .3s all;
+    color:#fff;
+    background-color: #ffdadf;
 }
 
 .menulink:hover{
-    color: #000 !important;
+    color: #f02342 !important;
+}
+
+.menulink:hover .menunumber{
+    color: #ffdadf !important;
 }
 
 /*Main*/
 .title{
     font-weight: 900;
     font-size: 62px;
+}
+
+/*Projects*/
+.bg-project{
+    background-color: #f02342;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Section = (props) => {
-  console.log(props);
   return (<div
     id={props.id || ''}
     style={{
