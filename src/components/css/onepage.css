@@ -1,0 +1,22 @@
+* {
+    font-family: 'Montserrat';
+}
+
+/*Top Menu*/
+.menunumber{
+    color: #51bfff;
+}
+
+.menulink{
+    transition: .3s all;
+}
+
+.menulink:hover{
+    color: #000 !important;
+}
+
+/*Main*/
+.title{
+    font-weight: 900;
+    font-size: 62px;
+}
