@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Section from './Section';
 import Config from '../../config.json';
+import {BsGithub} from 'react-icons/bs';
 
 const ProjectsSection = () => {
   const [state, setState] = useState({
@@ -28,50 +29,44 @@ const ProjectsSection = () => {
     setState({...state, hoveredMenu: null});
   };
 
+  const handleOpenProject = (url) => {
+    window.open(url);
+  };
+
   return (
     <Section width={100} height={100} color="#19142a" id="projects">
       <div className='container h-100'>
-        <div className='d-flex align-items-center justify-content-center h-100'>
-          <h2 className={'text-white text-center mb-5 align-self-start \
-          position-absolute mt-5'}>
-            Projects
-          </h2>
-          <div className={`flex-column d-flex w-100 h-50 \
-          text-white overflow-auto`}>
+        <div className='d-flex flex-column h-100'>
+          <h2 className='text-white title text-center my-3'>Projects</h2>
+          <div className={`flex-grow-1 align-items-center \
+          justify-content-center overflow-auto m-5 text-white`}>
             {state.repositories ?
               state.repositories.map((repo, i) => (
-                <div key={repo.id} className={`rounded bg-project \
-                my-3 row m-0 mx-3 py-3`}
-                onMouseEnter={() => handleProjectSelect(i)}
-                onMouseLeave={handleProjectDeSelect}>
-                  <div className='col-md-auto col-4'>
-                    <p className='p-0 m-0 text-wrap text-center'>
-                      Updated at
-                    </p>
-                    <p className='p-0 m-0 text-center'>
+                <div onClick={() => handleOpenProject(repo.html_url)}
+                  key={repo.id} className={`rounded bg-project \
+                  my-3 row m-0 mx-3 py-3`}
+                  onMouseEnter={() => handleProjectSelect(i)}
+                  onMouseLeave={handleProjectDeSelect}>
+                  <div className='col-md-auto col-4 d-flex align-items-center'>
+                    <BsGithub size="16" className='me-2' />
+                    <p className='updatedate p-0 m-0 text-center text-truncate'>
                       {repo.updated_at.split('-')[2].split('T')[0] + '-'}
                       {repo.updated_at.split('-')[1] + '-'}
-                      {repo.updated_at.split('-')[0]}
+                      {repo.updated_at.split('-')[0].slice(-2)}
                     </p>
                   </div>
-                  <div className='col-md col-8 '>
-                    <div className='row h-100'>
-                      <div className={'col-md col-8 d-flex align-items-center \
-                      justify-content-center'}>
-                        <p className='p-0 m-0 text-start'>
-                          {i == state.hoveredMenu && state.hoveredMenu != null ?
-                          repo.description ||
-                          'No Description Available' : repo.name}
-                        </p>
-                      </div>
-                      <div className={'col-md-auto col-4 ms-auto text-center \
-                       d-flex align-items-center justify-content-end'}>
-                        <a target="_blank" rel="noreferrer" href={`https://github.com/${repo.html_url}`}
-                          className="text-decoration-none text-white">
-                          Ver...
-                        </a>
-                      </div>
-                    </div>
+                  <div className={'col-md col-8 text-truncate d-flex \
+                     align-items-center justify-content-start \
+                     justify-content-md-center'}>
+                    {i == state.hoveredMenu && state.hoveredMenu != null ?
+                        (<p className={'p-0 m-0  text-truncate \
+                        animate__animated animate__flipInX'}>
+                          {repo.description || 'No Description Available'}
+                        </p>) :
+                      (<p className={'p-0 m-0 text-start text-truncate \
+                      animate__animated animate__flipInX'}>
+                        {repo.name}
+                      </p>)}
                   </div>
                 </div>)) : (<>
               Loading...

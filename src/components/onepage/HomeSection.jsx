@@ -5,11 +5,11 @@ import {BsGithub, BsTwitter} from 'react-icons/bs';
 
 const HomeSection = () => {
   return (
-    <Section width={100} height={100} color="#19142a" id="aboutme">
+    <Section width={100} height={100} color="#19142a" id="home">
       <div className='container h-100'>
         <div className='row m-0 p-0 h-100'>
           <div className='col-md-6 d-flex align-items-center'>
-            <div className='text-white d-flex flex-column w-100'>
+            <div className='text-white d-flex flex-column w-100 '>
               <h2 className='ms-3 text-wrap title text-md-start text-center'>
                 Pedro Barrera
               </h2>

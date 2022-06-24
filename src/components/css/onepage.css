@@ -1,14 +1,36 @@
+:root{
+    --primary-color: #B063F8;
+    --secondary-color: #6A00CB;
+    --important-color: #14B9E4;
+    --base-color: #19142a;
+    --secondbase-color: #1D1B43;
+}
 * {
     font-family: 'Montserrat';
 }
 
+.primary-text{
+    color: var(--primary-color);
+}
+.secondary-text{
+    color: var(--secondary-color);
+}
+.important-text{
+    color: var(--important-color);
+}
+
 /*Top Menu*/
 .logo{
-    color:#d9233a;
+    color:#fff;
+    font-weight: 900;
+    text-shadow: 3px 3px 2px var(--base-color),
+                 3px -3px 2px var(--base-color),
+                 -3px -3px 2px var(--base-color),
+                 -3px 3px 2px var(--base-color);
 }
 .menunumber{
     transition: .3s all;
-    color: #f02342;
+    color: var(--primary-color);
 }
 
 .menulink{
@@ -19,15 +41,15 @@
 .menulink-sm{
     transition: .3s all;
     color:#fff;
-    background-color: #ffdadf;
+    background-color: var(--secondbase-color);;
 }
 
 .menulink:hover{
-    color: #f02342 !important;
+    color: var(--primary-color) !important;
 }
 
 .menulink:hover .menunumber{
-    color: #ffdadf !important;
+    color: var(--important-color) !important;
 }
 
 /*Main*/
@@ -38,5 +60,18 @@
 
 /*Projects*/
 .bg-project{
-    background-color: #f02342;
+    border:2px solid var(--secondbase-color);
+    cursor: pointer;
+    transition: .2s;
+    min-height: 70px;
+}
+.bg-project:hover{
+    border:2px solid var(--important-color);
+    background-color: var(--secondary-color);
+    color:#14B9E4;
+    animation: headShake;
+    animation-duration: 0.2s;
+}
+.updatedate{
+    font-size: 12px;
 }
